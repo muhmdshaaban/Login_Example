@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <img src="../../assets/img/" alt="" />
+  <a class="navbar-brand" href="#">Login-JoinUS-App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto topnav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="this.authService.isLoggedIn()">
+        <a class="nav-link dropdown-toggle" role="button" *ngIf="this.authService.isLoggedIn()" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          My Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngIf="this.authService.isLoggedIn()" routerLink="/profile">Profile</a>
+          <a class="dropdown-item" *ngIf="this.authService.isLoggedIn()&&this.authService.currentUser().isAdmin"
+            routerLink="/admin">Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" *ngIf="this.authService.isLoggedIn()" (click)="onLogout()">Logout</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-primary text-white" type="button" *ngIf="! this.authService.isLoggedIn()"
+          routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-danger text-white" type="button" *ngIf="! this.authService.isLoggedIn()"
+          routerLink="/register">Register</a>
+      </li>
+    </ul>
+  </div>

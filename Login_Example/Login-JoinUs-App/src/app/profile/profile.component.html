@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-9">
+    <div class="container">
+      <div class="card-body" style="border: gray solid 0.5px; margin: auto;width: 300px;height: 250px;"
+        *ngIf="myProfile?.name">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">name:{{myProfile.name}} </li>
+          <li class="list-group-item">Email: {{myProfile.email}} </li>
+          <li class="list-group-item">isAdmin: {{myProfile.isAdmin}} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

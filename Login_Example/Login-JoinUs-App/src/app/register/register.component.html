@@ -1,0 +1,54 @@
+<!-- <form #f="ngForm" (ngSubmit)="onSupmit(f.value)">
+
+  <label>full</label>
+  <input required type="text" name="name" placeholder="Enter Email" ngModel #name="ngModel" />
+  <br />
+  <br />
+  <label>Email</label>
+  <input required type="email" name="email" placeholder="Enter Email" ngModel #email="ngModel" />
+  <br />
+  <br />
+  <label>password</label>
+  <input required type="password" name="password" placeholder="Enter password" ngModel #password="ngModel" />
+  <br />
+  <br />
+  <input [disabled]="f.invalid" type="submit" value="Sign up" />
+
+</form> -->
+
+
+<form #f="ngForm" (ngSubmit)="onSupmit(f.value)" class="form-signup">
+  <div class="text-center mb-4">
+    <!-- <h1 class="h3 mb-3 font-weight-normal">
+                      logo
+                  </h1> -->
+    <hr>
+    <p>Please enter your information to register for an account.</p>
+    <hr>
+  </div>
+
+  <div *ngIf="isNotValid" style="background-color: lightpink">
+    Wrong Username or Password
+  </div>
+
+  <div class="form-label-group">
+    <input required type="email" name="name" class="form-control" placeholder="Enter Full Name" ngModel
+      #name="ngModel" />
+    <label>Full Name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input required type="email" name="email" class="form-control" placeholder="Enter Email" ngModel #email="ngModel" />
+    <label>Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input required type="password" name="password" class="form-control" placeholder="Enter password" ngModel
+      #password="ngModel" />
+    <label>Password</label>
+  </div>
+
+  <button [disabled]="f.invalid" class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; Muhammad Shaaban-2019</p>
+
+</form>

@@ -1,0 +1,38 @@
+<form #f="ngForm" (ngSubmit)="edite(f.value)" *ngIf="changed">
+  <div class="radio">
+    <label>
+      <input required type="radio" name="isadmin" value="false" ngModel #isadmin="ngModel">
+      is't admin
+    </label>
+  </div>
+  <div class="radio">
+    <label for="">
+      <input required type="radio" value="true" name="isadmin" #isadmin="ngModel" ngModel>
+      isadmin
+    </label>
+  </div>
+  <input type="submit" value="edite" class="btn btn-primary" [disabled]=" f.invalid ">
+</form>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">isAdmin</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of allUsers">
+      <tr *ngIf="user?._id!=this.userAuth.currentUser()?.id">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.isAdmin}}</td>
+        <td><button type="button" class="btn btn-outline-primary" (click)="changedfun1();values(user)"><i
+              class="far fa-edit"> </i></button> <button type="button" class="btn btn-outline-danger"
+            (click)="removefun(user)"><i class="far fa-trash-alt">
+            </i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

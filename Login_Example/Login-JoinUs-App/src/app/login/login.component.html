@@ -1,0 +1,29 @@
+<form #f="ngForm" (ngSubmit)="onSignIn(f.value)" class="form-signin">
+  <div class="text-center mb-4">
+    <!-- <h1 class="h3 mb-3 font-weight-normal">
+                    logo
+                </h1> -->
+    <hr>
+    <p>Please enter your email address and password below to login</p>
+    <hr>
+  </div>
+
+  <div *ngIf="isNotValid" style="background-color: lightpink">
+    Wrong Username or Password
+  </div>
+  <div class="form-label-group">
+    <input required autofocus type="email" name="email" class="form-control" placeholder="Enter Email" ngModel
+      #email="ngModel" />
+    <label>Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input required type="password" name="password" class="form-control" placeholder="Enter password" ngModel
+      #password="ngModel" />
+    <label>Password</label>
+  </div>
+
+  <button [disabled]="f.invalid" class="btn btn-lg btn-dark btn-block" type="submit">Login</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; Muhammad Shaaban-2019</p>
+
+</form>

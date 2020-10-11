@@ -1,0 +1,22 @@
+<hr>
+<div class="container">
+  <div class="jumbotron">
+    <h2 *ngIf="authService.currentUser()">
+      Hi {{authService.currentUser().email}} !
+    </h2>
+    <p>You're logged in with Login-JoinUs Application!!</p>
+    <hr>
+    <h1>MEAN Stack </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit autem culpa qui ipsum quo rem dolorum nam
+      tenetur eveniet ad saepe nulla nihil eius recusandae quibusdam aperiam quos, provident eaque.</p>
+  </div>
+
+  <h3>Stack Used in this App</h3>
+  <ul class="list-group">
+    <li class="list-group-item">Angular 8 : Front-End</li>
+    <li class="list-group-item">ExpressJS: Back-End (API)</li>
+    <li class="list-group-item">NodeJS: Run-Time Env.</li>
+    <li class="list-group-item">MongoDB</li>
+  </ul>
+</div>
+<p class="mt-5 mb-3 text-muted text-center">&copy; Muhammad Shaaban-2019</p>
